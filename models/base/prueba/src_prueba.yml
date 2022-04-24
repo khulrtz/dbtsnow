@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: source_prueba
+    database: GIMO_CASHFLOW
+    schema: "{{ var('source_schema_dev') if target.name == 'dev' else var('source_schema_prod') if target.name == 'prod' else 'NOT_FOUND'}}"
+    tables:
+      - name: entorno
+
